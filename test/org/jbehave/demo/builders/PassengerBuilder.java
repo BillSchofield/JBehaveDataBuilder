@@ -14,7 +14,9 @@ public class PassengerBuilder {
 
 
     public Passenger build() {
-        return new Passenger(name, loyalty, gender);
+        final Passenger passenger = new Passenger(name, loyalty, gender);
+        System.out.println(passenger.toString());
+        return passenger;
     }
 
     public PassengerBuilder withName(String name) {

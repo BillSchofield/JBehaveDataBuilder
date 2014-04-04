@@ -17,4 +17,13 @@ public class Passenger {
         this.loyalty = loyalty;
         this.gender = gender;
     }
+
+    @Override
+    public String toString() {
+        return "Passenger{" +
+                "name='" + name + '\'' +
+                ", loyalty='" + loyalty + '\'' +
+                ", gender=" + gender +
+                '}';
+    }
 }
