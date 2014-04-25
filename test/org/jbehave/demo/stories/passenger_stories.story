@@ -1,2 +1,5 @@
+
 Scenario: Test builder
-Given a passenger named Bill Schofield with loyalty number 1234567
+Given I am a deaf passenger
+When I book a flight
+Then I receive a PNR indicating my special service

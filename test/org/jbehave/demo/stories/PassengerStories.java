@@ -10,7 +10,7 @@ import org.jbehave.core.reporters.IdeOnlyConsoleOutput;
 import org.jbehave.core.reporters.StoryReporterBuilder;
 import org.jbehave.core.steps.InjectableStepsFactory;
 import org.jbehave.core.steps.InstanceStepsFactory;
-import org.jbehave.demo.steps.GithubLoginSteps;
+import org.jbehave.demo.steps.BookPnrSteps;
 
 import java.io.File;
 import java.net.MalformedURLException;
@@ -40,7 +40,9 @@ public class PassengerStories extends JUnitStory {
     @Override
     public InjectableStepsFactory stepsFactory() {
         final Configuration configuration = configuration();
-        return new InstanceStepsFactory(configuration, new GithubLoginSteps());
+        return new InstanceStepsFactory(configuration,
+                new BookPnrSteps()
+        );
     }
 
 }
