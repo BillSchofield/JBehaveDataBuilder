@@ -28,7 +28,8 @@ public class BookPnrSteps {
     private ConfirmationPage confirmationPage;
     private List<Passenger> passengers = new ArrayList<Passenger>();
 
-    public BookPnrSteps() {
+    public BookPnrSteps(ConfirmationPage confirmationPage) {
+        this.confirmationPage = confirmationPage;
         this.flightBuilder = new FlightBuilder();
         this.passengerBuilder = new PassengerBuilder();
         this.fopBuilder = new FopBuilder();
@@ -60,7 +61,7 @@ public class BookPnrSteps {
     }
 
     @Then("I receive a PNR")
-    public void verifyFewerPoints(){
+    public void verifyConfirmedPnr(){
         assertTrue(confirmationPage.hasSuccessfulPnr());
         assertThat(confirmationPage.passengerName(), is(passengers.get(0).name()));
     }

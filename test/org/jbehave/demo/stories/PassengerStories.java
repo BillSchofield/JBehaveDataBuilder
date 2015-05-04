@@ -10,6 +10,7 @@ import org.jbehave.core.reporters.IdeOnlyConsoleOutput;
 import org.jbehave.core.reporters.StoryReporterBuilder;
 import org.jbehave.core.steps.InjectableStepsFactory;
 import org.jbehave.core.steps.InstanceStepsFactory;
+import org.jbehave.demo.pages.ConfirmationPage;
 import org.jbehave.demo.steps.BookPnrSteps;
 
 import java.io.File;
@@ -40,8 +41,9 @@ public class PassengerStories extends JUnitStory {
     @Override
     public InjectableStepsFactory stepsFactory() {
         final Configuration configuration = configuration();
+        ConfirmationPage confirmationPage = new ConfirmationPage();
         return new InstanceStepsFactory(configuration,
-                new BookPnrSteps()
+                new BookPnrSteps(confirmationPage)
         );
     }
 
